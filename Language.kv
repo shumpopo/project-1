@@ -1,0 +1,35 @@
+MDScreen:
+    name: "Lang"
+    MDNavigationLayout:
+
+        MDScreenManager:
+
+            MDScreen:
+
+                MDTopAppBar:
+                    title: "Choose Language"
+                    elevation: 4
+                    pos_hint: {"top": 1}
+                    md_bg_color: 1,0,0,1
+
+                MDIconButton:
+                    icon: "arrow-right"  # You can use any other icon you prefer
+                    theme_text_color: "Primary"
+                    pos_hint: {"top": 0.9, "right": 1}
+                    on_release: app.root.current = 'Drawer'
+
+
+    Button:
+        text: 'Tagalog'
+        size_hint: None, None
+        size: 100, 40
+        background_color: 1,0,0,1
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        on_release: app.root.current = 'Chats'
+    Button:
+        text: 'English'
+        size_hint: None, None
+        size: 100, 40
+        background_color: 1,0,0,1
+        pos_hint: {'center_x': 0.5, 'center_y': 0.6}
+        on_release: app.root.current = 'Chats'

@@ -1,0 +1,70 @@
+MDScreen:
+    name: 'Register'
+    size_hint: .7,.8
+    pos_hint: {"center_x":.5, "center_y":.5}
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        spacing: 10
+
+        Label:
+            text: 'SIGN UP'
+            font_size: '24sp'
+            color: 1, 0, 0, 1
+
+        TextInput:
+            id: nickname
+            hint_text: 'DESIRED NICKNAME'
+            padding: 10
+            font_size: '12sp'
+
+        TextInput:
+            id: stud_id
+            hint_text: 'STUDENT I.D. NUMBER'
+            padding: 10
+            font_size: '12sp'
+            color: 0, 0, 0, 0
+
+        TextInput:
+            id: year
+            hint_text: 'YEAR'
+            padding: 10
+            font_size: '12sp'
+
+        TextInput:
+            id: course
+            hint_text: 'COURSE'
+            padding: 10
+            font_size: '12sp'
+
+        TextInput:
+            id: section
+            hint_text: 'SECTION'
+            padding: 10
+            font_size: '12sp'
+
+        TextInput:
+            id: password
+            hint_text: 'CHOSEN PASSWORD'
+            password: True
+            font_size: '12sp'
+
+        Button:
+            text: 'register'
+            size_hint: None, None
+            size: 100, 40
+            background_color: 1, 0, 0, 1
+            pos_hint: {'center_x': 0.5}
+            on_release:
+                app.register(nickname.text, stud_id.text,year.text, course.text, section.text,password.text)
+                app.show_register_result(True)  # Pass the result of the registration
+
+        Button:
+            text: 'Back'
+            color: 1, 0, 0, 1
+            size_hint: None, None
+            size: 100, 40
+            background_color: 1, 1, 1, 1
+            pos_hint: {'center_x': 0.5}
+            on_release: app.root.current = 'login'

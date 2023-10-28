@@ -1,0 +1,136 @@
+<DrawerClickableItem@MDNavigationDrawerItem>
+    focus_color: "#e7e4c0"
+    text_color: "#4a4939"
+    icon_color: "#4a4939"
+    ripple_color: "#c5bdd2"
+    selected_color: "#0c6c4d"
+
+
+<DrawerLabelItem@MDNavigationDrawerItem>
+    text_color: "#4a4939"
+    icon_color: "#4a4939"
+    focus_behavior: False
+    selected_color: "#4a4939"
+    _no_ripple_effect: True
+
+
+MDScreen:
+    name: "Drawer"
+    MDNavigationLayout:
+
+        MDScreenManager:
+
+            MDScreen:
+
+                MDTopAppBar:
+                    title: "Home"
+                    elevation: 4
+                    pos_hint: {"top": 1}
+                    md_bg_color: 1,0,0,1
+                    left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+
+
+
+        MDNavigationDrawer:
+            id: nav_drawer
+            radius: (0, 16, 16, 0)
+
+            MDNavigationDrawerMenu:
+
+                MDNavigationDrawerHeader:
+                    title: "Name"
+                    title_color: "#4a4939"
+                    text: "Student ID"
+                    spacing: "4dp"
+                    padding: "12dp", 0, 0, "56dp"
+
+                DrawerLabelItem:
+                    icon: "information-outline"
+                    text: "Nickname"
+
+                DrawerLabelItem:
+                    icon: "information-outline"
+                    text: "Course"
+
+
+                DrawerLabelItem:
+                    icon: "information-outline"
+                    text: "Section"
+
+                MDNavigationDrawerDivider:
+
+                MDNavigationDrawerLabel:
+                    text: "Others"
+
+                DrawerClickableItem:
+                    icon: "information-outline"
+                    text: "Settings"
+
+                DrawerClickableItem:
+                    icon: "information-outline"
+                    text: "Log out"
+                    on_release: app.root.current = 'login'
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 4
+        spacing: 1
+
+    Label:
+        text: 'Choose Category'
+        font_size: '24sp'
+        color: 0, 0, 0, 1
+        pos_hint: {'center_x': 0.4, 'center_y': 0.8}
+
+
+    Button:
+        text: 'Academics'
+        size_hint: None, None
+        size: 100, 60
+        background_color: 0,0,255
+        pos_hint: {'center_x': 0.5, 'center_y': 0.7}
+        on_release: app.root.current = 'Lang'
+
+        Image:
+            source: 'academics.png'
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+
+    Button:
+        text: 'Family'
+        size_hint: None, None
+        size: 100, 60
+        background_color:255,255,204
+        pos_hint: {'center_x': 0.5, 'center_y': 0.6}
+        on_release: app.root.current = 'Lang'
+
+        Image:
+            source: 'family.png'
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+
+    Button:
+        text: 'Financial'
+        size_hint: None, None
+        size: 100, 60
+        background_color:34,139,34
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        on_release: app.root.current = 'Lang'
+
+        Image:
+            source: 'financial.png'
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+
+    Button:
+        text: 'Love'
+        size_hint: None, None
+        size: 100, 60
+        background_color: 1,0,0,1
+        pos_hint: {'center_x': 0.5, 'center_y': 0.4}
+        on_release: app.root.current = 'Lang'
+
+        Image:
+            source: 'love.png'
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y

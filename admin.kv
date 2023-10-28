@@ -1,0 +1,54 @@
+MDScreen:
+    name: 'admin'
+    MDNavigationLayout:
+
+        MDScreenManager:
+
+            MDScreen:
+
+                MDTopAppBar:
+                    title: "Admin"
+                    elevation: 4
+                    pos_hint: {"top": 1}
+                    md_bg_color: 1,0,0,1
+
+                MDIconButton:
+                    icon: "arrow-right"  # You can use any other icon you prefer
+                    theme_text_color: "Primary"
+                    pos_hint: {"top": 1, "right": 1}
+                    on_release: app.root.current = 'login'
+
+
+    BoxLayout:
+        orientation: 'vertical'
+        pos_hint: { "top": 1.7}
+        padding: 4
+        spacing: 10
+
+
+        TextInput:
+            id: text_input
+            hint_text: "Question"
+            size_hint: 1, None
+            pos_hint: {"right": 1.2}
+            font_size: "15sp"
+            height: self.minimum_height
+            cursor_color: 0, 0, 0, 0
+            cursor_width: "2sp"
+            foreground_color: 1, 170/255, 23/255, 1
+            background_color: 1,0,0,1
+            padding: 10
+
+
+        TextInput:
+            id: text_input
+            hint_text: "                          Answer"
+            size_hint: 1, None
+            pos_hint: {"right": 0.7}
+            font_size: "15sp"
+            height: self.minimum_height
+            cursor_color: 0, 0, 0, 0
+            cursor_width: "2sp"
+            foreground_color: 1, 170/255, 23/255, 1
+            background_color: 1,0,0,1
+            padding: 10
